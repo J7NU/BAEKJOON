@@ -13,7 +13,7 @@ print(sum_)
 
 end_time = time.time()
 
-print(f'코드 실행 시간: {end_time - start_time:.20f}')
+print(f'코드 실행 시간: {end_time - start_time:.4f}')
 
 
 # num = int(input())
