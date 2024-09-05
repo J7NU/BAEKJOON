@@ -1,38 +1,16 @@
-
-import sys
-import time
-
-
-def main():
-    n, m = map(int, input().split())
-    count = 0
-    for i in range(n, m+1):
-        if i == 1:
-            continue
-        i_divisor = 0
-        for j in range(2, i+1):
-            if i % j == 0:
-                i_divisor += 1
-        if i_divisor == 1:
-            print(i)
+def if_decimal(num):
+    if num == 1:
+        return
+    for i in range(2, int(num**0.5)+1):
+        if num % i == 0:
+            return
+    count.append(num)
 
 
-start_time = time.time()
+m, n = map(int, input().split())
+count = []                             # 몇 개 해당하는지
+for i in range(m, n+1):
+    if_decimal(i)  # m과 n사이에 숫자 하나씩 확인
+print(*count)
 
-main()
-
-end_time = time.time()
-
-print(f'코드 실행 시간: {end_time - start_time:.4f}')
-
-start_time = time.time()
-
-# ------------------------------------------------------
-
-MN_list = sys.stdin.readline().rstrip()
-# MN_list 0보다 크고 1보다 작은 소수를 모두 출력해야함
-
-# ------------------------------------------------------
-end_time = time.time()
-
-print(f'코드 실행 시간: {end_time - start_time:.4f}')
+# 근데 이것도 결국 이중 포문 아닌가?
